@@ -1,0 +1,31 @@
+mixin about()
+    section.about
+        .about__logo
+            +image('content/user.jpg', 'user-pic')
+        ul.about__list
+            each item in aboutList
+                li.about__item
+                    span=item.title
+                    span=item.title2
+        .about__descr
+            p Привет, меня зовут
+            h2 Сергей Прокопеня
+            p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            em Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+
+-
+    var aboutList = [
+    {
+        title: 'Проживаю',
+        title2: 'Брест'
+    },
+    {
+        title: 'Возраст',
+        title2: '37 лет'
+    },
+    {
+        title: 'Родился',
+        title2: '21 октября 1981'
+    }
+    ]

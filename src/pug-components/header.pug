@@ -1,0 +1,46 @@
+mixin header()
+    header.header
+        .header__logo СП
+        .header__social
+            +icon('inst', 'instagram')
+            +icon('vk', 'vk')
+            +icon('github', 'github')
+        .header__menu.menu
+            .header__burger.burger
+                span.burger__line
+            ul.menu__list
+                +menuList('menu', menuList)
+
+
+mixin menuList(className, list)
+    each item in list
+        li(class=`${className}__item`)
+            a(class=`${className}__link` href=item.link)=item.title
+
+-
+    var menuList = [
+    {
+        link: '#main',
+        title: 'Главная'
+    },
+    {
+        link: '#about',
+        title: 'Обо мне'
+    },
+    {
+        link: '#skill',
+        title: 'Навыки'
+    },
+    {
+        link: '#works',
+        title: 'Работы'
+    },
+    {
+        link: '#reviews',
+        title: 'Отзывы'
+    },
+    {
+        link: '#contact',
+        title: 'Связаться'
+    }
+    ]
