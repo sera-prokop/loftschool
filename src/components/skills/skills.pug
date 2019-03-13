@@ -2,30 +2,57 @@ mixin skills()
     section.skills
         h3.skills__title Чем я могу быть полезен вам
         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        h5 Front-end
+        h4 Front-end
         ul.skills__list
-            li.skils__item html5
-            li.skils__item css3
-            li.skils__item Javascript
-            li.skils__item Jquery и Vue.js
-        h5 Workflow
+            +skillList(topSkillList)
+        h4 Workflow
         ul.skills__list
-            li.skils__item git
-            li.skils__item Terminal
-            li.skils__item Gulp
-            li.skils__item Webpack
+            +skillList(bottomSkillList)
 
+mixin skillList(skillList)
+    each item in skillList
+        li.skills__item
+            svg.skills__circular-chart.orange(viewBox='0 0 36 36' width='134' height='134' fill='transparent')
+                path.skills__circle-bg(d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
+                path.skills__circle(stroke-dasharray=`${item.skillPercent} 100`, d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-text.skills__percentage(x='18', y='20.35')=item.skillName
+            span.skills__percentage=item.skillName
 
-
-
-
-
-            .single-chart
-                svg.circular-chart.orange(viewBox='0 0 36 36')
-                    path.circle-bg(d='M18 2.0845\
-                    a 15.9155 15.9155 0 0 1 0 31.831\
-                    a 15.9155 15.9155 0 0 1 0 -31.831')
-                    path.circle(stroke-dasharray='50, 100', d='M18 2.0845\
-                    a 15.9155 15.9155 0 0 1 0 31.831\
-                    a 15.9155 15.9155 0 0 1 0 -31.831')
-                    text.percentage(x='18', y='20.35') html5
+-
+    var topSkillList = [
+    {
+        skillName: 'html5',
+        skillPercent: '25'
+    },
+    {
+        skillName: 'css3',
+        skillPercent: '75'
+    },
+    {
+        skillName: 'Javascript',
+        skillPercent: '50'
+    },
+    {
+        skillName: 'Jquery и Vue.js',
+        skillPercent: '60'
+    }
+    ]
+-
+    var bottomSkillList = [
+    {
+    skillName: 'git',
+    skillPercent: '25'
+    },
+    {
+    skillName: 'Terminal',
+    skillPercent: '75'
+    },
+    {
+    skillName: 'Gulp',
+    skillPercent: '50'
+    },
+    {
+    skillName: 'Webpack',
+    skillPercent: '60'
+    }
+    ]

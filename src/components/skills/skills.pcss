@@ -1,0 +1,43 @@
+.skills__item {
+  //width: 112px;
+  justify-content: space-around ;
+}
+
+.skills__circular-chart {
+  display: block;
+  //margin: 10px auto;
+  //max-width: 80%;
+  //max-height: 250px;
+}
+
+.skills__circle-bg {
+  fill: none;
+  stroke: #eaeaea;
+  stroke-width: 1;
+}
+
+.skills__circle {
+  fill: none;
+  stroke-width: 3px;
+  //stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.skills__circular-chart.orange .skills__circle {
+  stroke: #f29400;
+}
+
+.skills__percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-anchor: middle;
+  display: inline-block;
+}
+
