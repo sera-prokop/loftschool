@@ -1,9 +1,11 @@
 html {
-  @include desktop {
+  box-sizing: border-box;
+  font-size: 14px;
+  @include tablets {
     font-size: 15px;
   }
-  @include tablets {
-    font-size: 14px;
+  @include desktop {
+    font-size: 16px;
   }
 }
 body,
@@ -28,12 +30,15 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1480px;
-  width: 95%;
+  max-width: 1560px;
+  width: 100%;
+  //width: 85%;
+  padding: 0 40px;
   // width: 1490px;
 
-  @include phones {
-    width: 85%;
+  @include desktop {
+    //padding: 0 10px;
+    //width: 95%;
   }
 }
 
@@ -42,13 +47,24 @@ body {
   min-height: 650px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 button {
   border: 0;
   cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 ul {

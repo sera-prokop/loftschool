@@ -1,15 +1,25 @@
 mixin header()
     header.header
-        .header__logo СП
-        .header__social
-            +icon('inst', 'instagram')
-            +icon('vk', 'vk')
-            +icon('github', 'github')
-        .header__menu.menu
-            .header__burger.burger
-                span.burger__line
-            ul.menu__list
-                +menuList('menu', menuList)
+        .container
+            .header__container
+                .header__logo СП
+                .header__menu.menu
+                    ul.menu__list
+                        +menuList('menu', menuList)
+                .header__social
+                    .social
+                        a(href='#' target='_blank').social__link
+                            +icon('inst', 'social__icon')
+                            span.visually-hidden Инстаграмм
+                        a(href='#' target='_blank').social__link
+                            +icon('vk', 'social__icon')
+                            span.visually-hidden Вконтакте
+                        a(href='#' target='_blank').social__link
+                            +icon('github', 'social__icon')
+                            span.visually-hidden Гитхаб
+                .header__burger.burger
+                    span.burger__line
+                        i.visually-hidden Мобильное меню
 
 
 mixin menuList(className, list)
