@@ -1,10 +1,74 @@
+.skills{
+  background-image: url('../images/content/skills/skills_bg.png');
+  background-size: cover;
+  .container{
+    padding: 0 25px;
+  }
+  @include desktop{
+    display: flex;
+  }
+}
+
+.skills__title{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.skills__text{
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-bottom: 58px;
+}
+
+.skills__subtitle{
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.skills__list{
+  display: flex;
+  flex-wrap: wrap;
+  @include phones{
+    max-width: 575px;
+    margin: 0 auto;
+  }
+
+}
+
 .skills__item {
-  //width: 112px;
-  justify-content: space-around ;
+  width: 50%;
+  margin: 0 auto 25px;
+  position: relative;
+  justify-content: space-between;
+  @include phones{
+    width: auto;
+  }
+  //&:nth-child(even) .skills__item-wrap{
+  //  margin-left: auto;
+  //  @include phones{
+  //    margin-left: initial;
+  //  }
+  //}
+  //&:nth-child(odd) .skills__item-wrap{
+  //  margin-right: auto;
+  //  @include phones{
+  //    margin-right: initial;
+  //  }
+  //}
+}
+
+.skills__item-wrap{
+  position: relative;
+  width: 112px;
 }
 
 .skills__circular-chart {
   display: block;
+  margin: 0 auto;
   //margin: 10px auto;
   //max-width: 80%;
   //max-height: 250px;
@@ -12,7 +76,7 @@
 
 .skills__circle-bg {
   fill: none;
-  stroke: #eaeaea;
+  stroke: rgba(#eaeaea, 0.1);
   stroke-width: 1;
 }
 
@@ -23,12 +87,6 @@
   animation: progress 1s ease-out forwards;
 }
 
-@keyframes progress {
-  0% {
-    stroke-dasharray: 0 100;
-  }
-}
-
 .skills__circular-chart.orange .skills__circle {
   stroke: #f29400;
 }
@@ -36,8 +94,33 @@
 .skills__percentage {
   fill: #666;
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   text-anchor: middle;
   display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 100px;
+}
+
+.skills__img{
+  margin: 0 auto;
+  height: 235px;
+  object-fit: contain;
+  @include desktop{
+    order: -1;
+    transform: rotate(90deg) translateY(50px);
+    align-self: center;
+    height: 707px;
+    max-width: 400px;
+  }
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
 }
 

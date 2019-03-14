@@ -1,18 +1,20 @@
 mixin skills()
     section.skills
-        h3.skills__title Чем я могу быть полезен вам
-        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        h4 Front-end
-        ul.skills__list
-            +skillList(topSkillList)
-        h4 Workflow
-        ul.skills__list
-            +skillList(bottomSkillList)
+        .container
+            h3.skills__title Чем я могу быть полезен вам
+            p.skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            h4.skills__subtitle Front-end
+            ul.skills__list
+                +skillList(topSkillList)
+            h4.skills__subtitle Workflow
+            ul.skills__list
+                +skillList(bottomSkillList)
+        +image('content/skills/keyboard.png', 'skills__img')
 
 mixin skillList(skillList)
     each item in skillList
         li.skills__item
-            svg.skills__circular-chart.orange(viewBox='0 0 36 36' width='134' height='134' fill='transparent')
+            svg.skills__circular-chart.orange(viewBox='0 0 36 36' width='112' height='112' fill='transparent')
                 path.skills__circle-bg(d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
                 path.skills__circle(stroke-dasharray=`${item.skillPercent} 100`, d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
                 //-text.skills__percentage(x='18', y='20.35')=item.skillName
