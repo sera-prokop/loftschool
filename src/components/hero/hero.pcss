@@ -1,3 +1,69 @@
 .hero{
+    height: 100vh;
+    min-height: 600px;
+    padding-top: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ccc;
+}
 
+.hero__descr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    @include tablets{
+        flex-direction: row;
+    }
+}
+
+.hero__text{
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    color: $white;
+    opacity: 0.4;
+    margin-bottom: 10px;
+    font-weight: 600;
+    @include phones{
+        font-size: 16px;
+    }
+    @include tablets{
+        font-size: 18px;
+        text-align: right;
+        margin-right: 60px;
+    }
+    span{
+        display: block;
+    }
+}
+
+.hero__title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: $white;
+    line-height: 1;
+    @include tablets{
+        font-size: 48px;
+    }
+    @include desktop{
+        font-size: 72px;
+    }
+}
+
+.hero__scroll{
+    display: none;
+    color: $white;
+    fill: $white;
+    margin-bottom: 30px;
+    @include tablets{
+        display: flex;
+        align-items: center;
+    }
+    span{
+        margin-right: 20px;
+    }
 }
