@@ -1,5 +1,5 @@
 {
-  "text-color": "#414c63",
+  "text-color": "#fff",
   "links-color": "#4b6fd7",
   "bp-desktop-hd": "1801px",
   "bp-desktop": "1201px",
@@ -7,5 +7,6 @@
   "bp-phones": "481px",
   "white": "#fff",
   "orange": "#ff9a00",
+  "red": "#ff0000",
   "tr": "0.25s"
 }
