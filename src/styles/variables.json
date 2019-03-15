@@ -8,5 +8,8 @@
   "white": "#fff",
   "orange": "#ff9a00",
   "red": "#ff0000",
+
+  "slider_btn": "#2d3c4e",
+  
   "tr": "0.25s"
 }

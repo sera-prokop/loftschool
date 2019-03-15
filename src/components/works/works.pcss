@@ -1,3 +1,154 @@
 .works{
-
+    padding: 60px 0;
+    color: #283340;
+    background-color: $white;
 }
+
+.works__wrapper{
+    @include desktop{
+        display: flex;
+    }
+}
+
+.works__container{
+    @include tablets{
+        padding: 0 25px;
+    }
+    @include desktop{
+        flex-basis: auto; /* default value */
+        //flex-grow: 1;
+        min-width: 60%;
+        max-width: 1025px;
+        width: 100%;
+    }
+}
+
+.works__title{
+    font-size: 24px;
+    line-height: 48px;
+    color: #2b3948;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.works__slider{
+    margin-bottom: 60px;
+}
+
+.works__tags{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    justify-content: center;
+    @include desktop{
+        justify-content: flex-start;
+    }
+}
+
+.works__tags-item{
+    margin-right: 15px;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.works__tags-link{
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    color: rgba(#283340, 0.7);
+    font-weight: 600;
+    padding: 0 20px;
+    line-height: 45px;
+    border-radius: 22px;
+    background-color: rgba(#7aa0c5, 0.1);
+}
+
+.works__descr{
+    h4{
+        font-size: 24px;
+        font-weight: 700;
+        color: #2d3c4e;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+    a{
+        padding-left: 35px;
+        position: relative;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        color: #4b6fd7;
+        &:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background: svg-load('link.svg', fill='#4b6fd7', width=100%, height=100%);
+        }
+    }
+}
+
+// Slider style
+
+.slider{
+    position: relative;
+}
+
+.slider__img{
+    img{
+        width: 100%;
+        height: auto;
+    }
+    @include tablets{
+        padding-right: 50px;
+    }
+}
+
+.slider__arrow{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include tablets{
+        bottom: 30px;
+    }
+}
+
+.slider__btn{
+    padding: 16px 21px;
+    background-color: $slider_btn;
+    display: block;
+    cursor: pointer;
+    fill: rgba($white, 0.3);
+    transition: $tr;
+    &:hover{
+        fill: rgba($white, 1);
+    }
+}
+
+.slider__arrow-prew{
+    transform: rotate(180deg);
+}
+
+.slider__previewer{
+    display: none;
+    position: absolute;
+    height: 100px;
+    right: 50px;
+    bottom: 30px;
+    @include tablets{
+        display: flex;
+    }
+}
+
+
+//end slider style
