@@ -1,6 +1,44 @@
-mixin template()
-    h1=templateVar
+mixin reviews()
+    section.reviews
+        .container
+            .reviews__top
+                h2.reviews__title Что обо мне говорят
+                .reviews__btns.btns-reviews
+                    button.btns-reviews__prew.btns-reviews__icon
+                        span.visually-hidden Вперед
+                        +icon('short_arrow', 'btns-reviews__svg', '10px', '10px')
+                    button.btns-reviews__next.btns-reviews__icon
+                        span.visually-hidden Назад
+                        +icon('short_arrow', 'btns-reviews__svg', '10px', '10px')
+            .reviews__slider
+                +sliderReviews(sliderData)
 
+
+
+mixin sliderReviews(list)
+    ul.slider-reviews
+        each item, ind in list
+            li(class=`slider-reviews__item slider-reviews__item--${ind}`)
+                p.slider-reviews__text=item.text
+                .slider-reviews__author.author
+                    .author__img
+                        +image(`content/reviews/${item.img}`, '')
+                    .author__descr
+                        p.author__name=item.name
+                        p.author__about=item.about
 
 -
-    var templateVar = 'Hello'
+    var sliderData = [
+    {
+        text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+        img: 'author_1.png',
+        name: 'Ковальчук Дмитрий',
+        about: 'Основатель Loftschool'
+    },
+    {
+        text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+        img: 'author_2.png',
+        name: 'Владимир Сабанцев',
+        about: 'Преподаватель'
+    }
+    ]
