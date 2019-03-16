@@ -1,0 +1,109 @@
+.contact{
+    padding: 60px 0;
+}
+
+.contact__title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.contact__form{
+    font-size: 0;
+    @include desktop{
+        padding-right: 20%;
+    }
+}
+
+.contact__field{
+    margin-bottom: 40px;
+}
+
+.contact__field--top{
+    @include tablets{
+        width: calc(50% - 10px);
+        display: inline-block;
+        margin-left: 20px;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+}
+
+.contact__label{
+    color: rgba(#fff, 0.3);
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.contact__input-wrap{
+    display: flex;
+    align-items: center;
+    position: relative;
+    fill: rgba($white, 0.3);
+    textarea{
+        resize: none;
+        height: 100px;
+        line-height: 24px;
+    }
+}
+
+.contact__svg{
+    position: absolute;
+    top: 15px;
+    transition: $tr;
+}
+
+.contact__input{
+    font-size: 14px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+    padding: 20px 0 20px 45px;
+    width: 100%;
+    color: $white;
+    transition: $tr;
+    &::-webkit-input-placeholder {
+        color: $white;
+    }
+    &::-moz-placeholder          {
+        color: $white;
+    }
+    &:-moz-placeholder           {
+        color: $white;
+    }
+    &:-ms-input-placeholder      {
+        color: $white;
+    }
+    &:hover, &:focus, &:active{
+        border-bottom-color: #5500f2;
+        outline: none;
+        + .contact__svg{
+            fill: #5500f2;
+        }
+    }
+    @include tablets{
+
+    }
+}
+
+.contact__submit{
+    width: 100%;
+    color: $white;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 60px;
+    font-weight: 700;
+    white-space: nowrap;
+    background-image: linear-gradient(to right, #ea7400 0%, #f29400 100%);
+    &:hover, &:focus, &:active{
+        background-image: linear-gradient(to right, #ff7f00 0%, #ff9d00 100%);
+        outline: none;
+    }
+}
+
+
+
+

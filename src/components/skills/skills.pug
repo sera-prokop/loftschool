@@ -1,15 +1,17 @@
 mixin skills()
     section.skills
-        .container
+        .container.skills__container
             h3.skills__title Чем я могу быть полезен вам
             p.skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            h4.skills__subtitle Front-end
-            ul.skills__list
-                +skillList(topSkillList)
-            h4.skills__subtitle Workflow
-            ul.skills__list
-                +skillList(bottomSkillList)
-        +image('content/skills/keyboard.png', 'skills__img')
+            .skills__wrap
+                h4.skills__subtitle Front-end
+                ul.skills__list
+                    +skillList(topSkillList)
+            .skills__wrap
+                h4.skills__subtitle Workflow
+                ul.skills__list
+                    +skillList(bottomSkillList)
+        //-+image('content/skills/keyboard.png', 'skills__img')
 
 mixin skillList(skillList)
     each item in skillList

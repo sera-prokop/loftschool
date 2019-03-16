@@ -4,8 +4,7 @@ mixin header()
             .header__container
                 .header__logo СП
                 .header__menu.menu
-                    ul.menu__list
-                        +menuList('menu', menuList)
+                    +menuList('menu', menuList)
                 .header__social
                     .social
                         a(href='#' target='_blank').social__link
@@ -23,9 +22,10 @@ mixin header()
 
 
 mixin menuList(className, list)
-    each item in list
-        li(class=`${className}__item`)
-            a(class=`${className}__link` href=item.link)=item.title
+    ul(class=`${className}__list`)
+        each item in list
+            li(class=`${className}__item`)
+                a(class=`${className}__link` href=item.link)=item.title
 
 -
     var menuList = [

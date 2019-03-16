@@ -1,0 +1,27 @@
+mixin footer()
+    footer.footer
+        .container
+            .footer__top
+                p.footer__copy &copy 2019
+                p.footer__title Владимир Астахов
+                p.footer__text Личный сайт веб-разработчика
+            .footer__bottom
+                .footer__menu.menu
+                    +menuList('menu', menuList)
+                .footer__col.footer__col--left
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    .footer__social.social.social--footer
+                        a(href='#' target='_blank').social__link
+                            +icon('inst', 'social__icon')
+                            span.visually-hidden Инстаграмм
+                        a(href='#' target='_blank').social__link
+                            +icon('vk', 'social__icon')
+                            span.visually-hidden Вконтакте
+                        a(href='#' target='_blank').social__link
+                            +icon('github', 'social__icon')
+                            span.visually-hidden Гитхаб
+                .footer__col.footer__col--right
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    em Martin Golding
+
+

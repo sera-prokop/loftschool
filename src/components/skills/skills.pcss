@@ -1,8 +1,24 @@
 .skills{
+  position: relative;
   background-image: url('../images/content/skills/skills_bg.png');
   background-size: cover;
-  .container{
+  padding: 60px 0;
+  &:after{
+    content: '';
+    background-image: url('../images/content/skills/keyboard_dk.png');
+    height: calc(100% - 60px);
+    max-width: 600px;
+    width: 100%;
+    bottom: -60px;
+    //background-size: 60px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .skills__container{
     padding: 0 25px;
+    position: relative;
+    z-index: 1;
   }
   @include desktop{
     display: flex;
@@ -13,6 +29,10 @@
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 30px;
+  @include desktop{
+    font-size: 30px;
+    margin-bottom: 60px;
+  }
 }
 
 .skills__text{
@@ -20,6 +40,27 @@
   font-weight: 400;
   opacity: 0.5;
   margin-bottom: 58px;
+  @include desktop{
+    font-size: 16px;
+    margin-bottom: 95px;
+  }
+}
+
+.skills__title,
+.skills__text{
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.skills__wrap{
+  @include desktop{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 810px;
+    margin-left: auto;
+  }
+
 }
 
 .skills__subtitle{
@@ -27,14 +68,28 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 35px;
+  //align-self: flex-start;
+  @include desktop{
+    margin-bottom: 50px;
+    align-self: flex-start;
+    margin-left: 75px;
+
+  }
 }
 
 .skills__list{
   display: flex;
   flex-wrap: wrap;
   @include phones{
-    max-width: 575px;
+    //max-width: 575px;
     margin: 0 auto;
+  }
+  @include desktop{
+    margin-bottom: 35px;
+    //padding-left: 28%;
+    //max-width: 810px;
+    margin-left: -34px;
+    margin-right: -34px;
   }
 
 }
@@ -47,31 +102,20 @@
   @include phones{
     width: auto;
   }
-  //&:nth-child(even) .skills__item-wrap{
-  //  margin-left: auto;
-  //  @include phones{
-  //    margin-left: initial;
-  //  }
-  //}
-  //&:nth-child(odd) .skills__item-wrap{
-  //  margin-right: auto;
-  //  @include phones{
-  //    margin-right: initial;
-  //  }
-  //}
-}
+  @include desktop{
+    margin-left: 34px;
+    margin-right: 34px;
 
-.skills__item-wrap{
-  position: relative;
-  width: 112px;
+  }
 }
 
 .skills__circular-chart {
   display: block;
   margin: 0 auto;
-  //margin: 10px auto;
-  //max-width: 80%;
-  //max-height: 250px;
+  @include desktop{
+    width: 134px;
+    height: 134px;
+  }
 }
 
 .skills__circle-bg {
@@ -113,8 +157,8 @@
     order: -1;
     transform: rotate(90deg) translateY(50px);
     align-self: center;
-    height: 707px;
-    max-width: 400px;
+    //height: 707px;
+    //max-width: 400px;
   }
 }
 

@@ -1,0 +1,21 @@
+mixin contact()
+    section.contact
+        .container
+            h2.contact__title Связаться со мной
+            form(action="#").contact__form
+                .contact__field.contact__field--top
+                    label(for="name").contact__label Введите ваше имя
+                    .contact__input-wrap
+                        input(type="text" id="name" placeholder="Прокопеня Сергей").contact__input
+                        +icon('avatar', 'contact__svg', '26px', '30px')
+                .contact__field.contact__field--top
+                    label(for="mail").contact__label Введите ваш email
+                    .contact__input-wrap
+                        input(type="text" id="mail" placeholder="loftschool@study.com").contact__input
+                        +icon('envelope', 'contact__svg', '26px', '30px')
+                .contact__field.contact__field--bottom
+                    label(for="text").contact__label Сообщение к письму
+                    .contact__input-wrap
+                        textarea(id="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").contact__input
+                        +icon('chat', 'contact__svg', '26px', '30px')
+                button(type="submit").contact__submit Отправить
