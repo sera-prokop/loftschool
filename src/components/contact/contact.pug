@@ -1,7 +1,7 @@
 mixin contact()
-    section.contact
+    section.contact.section
         .container
-            h2.contact__title Связаться со мной
+            h2.contact__title.section__title Связаться со мной
             form(action="#").contact__form
                 .contact__field.contact__field--top
                     label(for="name").contact__label Введите ваше имя
@@ -18,4 +18,5 @@ mixin contact()
                     .contact__input-wrap
                         textarea(id="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").contact__input
                         +icon('chat', 'contact__svg', '26px', '30px')
-                button(type="submit").contact__submit Отправить
+                .contact__submit
+                    button(type="submit") Отправить

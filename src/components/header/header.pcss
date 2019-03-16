@@ -1,9 +1,15 @@
 .header{
-    background-color: rgba(0, 0, 0, 0.3);
+    //background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
     z-index: 100;
+    transition: background-color $tr;
 }
+
+.show_bg{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 .header__container{
     display: flex;
     align-items: center;

@@ -11,7 +11,7 @@ mixin skills()
                 h4.skills__subtitle Workflow
                 ul.skills__list
                     +skillList(bottomSkillList)
-        //-+image('content/skills/keyboard.png', 'skills__img')
+        +image('content/skills/keyboard.png', 'skills__img')
 
 mixin skillList(skillList)
     each item in skillList
@@ -20,7 +20,7 @@ mixin skillList(skillList)
                 path.skills__circle-bg(d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
                 path.skills__circle(stroke-dasharray=`${item.skillPercent} 100`, d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
                 //-text.skills__percentage(x='18', y='20.35')=item.skillName
-            span.skills__percentage=item.skillName
+            span.skills__name=item.skillName
 
 -
     var topSkillList = [

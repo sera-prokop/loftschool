@@ -1,23 +1,22 @@
 mixin works()
-    section.works
-        h3.works__title Мои работы
-        .works__wrapper
-            .works__container
-                .works__slider.slider
-                    .slider__arrow
-                        button.slider__arrow-next.slider__btn
-                            +icon('short_arrow', 'slider__svg', '10px', '10px')
-                            span.visually-hidden Вперед
-                        button.slider__arrow-prew.slider__btn
-                            +icon('short_arrow', 'slider__svg', '10px', '10px')
-                            span.visually-hidden Назад
-                    .slider__img
-                        +image('content/works/works_1.jpg', '')
-                    .slider__previewer
-                        +image('content/works/previewer_1.png', '')
-                        +image('content/works/previewer_2.png', '')
-                        +image('content/works/previewer_3.png', '')
-            .container
+    section.works.section
+        h3.works__title.section__title.container Мои работы
+        .container.works__container
+            .works__slider.slider
+                .slider__arrow
+                    button.slider__arrow-next.slider__btn
+                        +icon('short_arrow', 'slider__svg', '10px', '10px')
+                        span.visually-hidden Вперед
+                    button.slider__arrow-prew.slider__btn
+                        +icon('short_arrow', 'slider__svg', '10px', '10px')
+                        span.visually-hidden Назад
+                .slider__img
+                    +image('content/works/works_1.jpg', '')
+                .slider__previewer
+                    +image('content/works/previewer_1.png', '')
+                    +image('content/works/previewer_2.png', '')
+                    +image('content/works/previewer_3.png', '')
+            .works__wrapper
                 ul.works__tags
                     li.works__tags-item
                         a(href="#").works__tags-link HTML

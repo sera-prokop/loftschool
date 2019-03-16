@@ -1,31 +1,36 @@
 .contact{
-    padding: 60px 0;
+
 }
 
 .contact__title{
-    font-size: 24px;
-    font-weight: 700;
     margin-bottom: 60px;
+    @include desktop{
+        margin-bottom: 95px;
+    }
 }
 
 .contact__form{
     font-size: 0;
     @include desktop{
-        padding-right: 20%;
+        padding-right: 30%;
     }
 }
 
 .contact__field{
     margin-bottom: 40px;
-}
-
-.contact__field--top{
-    @include tablets{
-        width: calc(50% - 10px);
-        display: inline-block;
-        margin-left: 20px;
-        &:first-child{
-            margin-left: 0;
+    &--top{
+        @include tablets{
+            width: calc(50% - 10px);
+            display: inline-block;
+            margin-left: 20px;
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+    &--bottom{
+        @include desktop{
+            margin-bottom: 60px;
         }
     }
 }
@@ -35,6 +40,9 @@
     font-weight: 400;
     font-size: 14px;
     margin-bottom: 15px;
+    @include desktop{
+        font-size: 16px;
+    }
 }
 
 .contact__input-wrap{
@@ -56,7 +64,7 @@
 }
 
 .contact__input{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     background-color: transparent;
     border: none;
@@ -84,23 +92,38 @@
             fill: #5500f2;
         }
     }
-    @include tablets{
-
+    @include desktop{
+        font-size: 18px;
     }
 }
 
 .contact__submit{
-    width: 100%;
-    color: $white;
-    font-size: 16px;
-    text-transform: uppercase;
-    line-height: 60px;
-    font-weight: 700;
-    white-space: nowrap;
-    background-image: linear-gradient(to right, #ea7400 0%, #f29400 100%);
-    &:hover, &:focus, &:active{
-        background-image: linear-gradient(to right, #ff7f00 0%, #ff9d00 100%);
-        outline: none;
+    button{
+        width: 100%;
+        color: $white;
+        font-size: 16px;
+        text-transform: uppercase;
+        line-height: 60px;
+        font-weight: 700;
+        white-space: nowrap;
+        background-image: linear-gradient(to right, #ea7400 0%, #f29400 100%);
+        &:hover, &:focus, &:active{
+            background-image: linear-gradient(to right, #ff7f00 0%, #ff9d00 100%);
+            outline: none;
+        }
+    }
+    @include tablets{
+        display: flex;
+        justify-content: center;
+        button{
+            font-size: 18px;
+            width: auto;
+            padding: 0 120px;
+            line-height: 80px;
+        }
+    }
+    @include desktop{
+        justify-content: flex-start;
     }
 }
 

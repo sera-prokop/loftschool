@@ -1,7 +1,6 @@
 .about{
     background-color: rgba(#000, 0.5);
     font-size: 14px;
-    padding: 60px 0;
     background-image: url('../images/content/about/about_bg.jpg');
     background-size: cover;
     @include tablets{
@@ -15,7 +14,8 @@
     align-items: center;
     @include tablets{
         flex-direction: row;
-        align-items: stretch;
+        align-items: flex-start;
+        max-width: 958px;
     }
 }
 
