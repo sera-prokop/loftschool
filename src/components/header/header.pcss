@@ -14,7 +14,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    //padding: 30px;
 }
 
 .header__logo{
@@ -45,13 +44,6 @@
 
 .menu__item{
     display: flex;
-    @include tablets{
-        //margin-right: 20px;
-    }
-    @include desktop{
-        //margin-right: 60px;
-    }
-
     &:last-child{
         margin-right: 0;
     }
@@ -113,7 +105,6 @@
 }
 
 .social__link{
-    //margin-right: 40px;
     padding: 20px;
     &:last-child{
         margin-right: 0;
@@ -122,9 +113,6 @@
         .social__icon{
             fill: $orange;
         }
-    }
-    @include desktop{
-        //padding: 10px 20px;
     }
 }
 

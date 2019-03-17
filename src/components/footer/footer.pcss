@@ -13,6 +13,9 @@
     @include tablets{
         margin-right: 75px;
     }
+    @include desktop{
+        display: flex;
+    }
 }
 
 .footer__copy{
@@ -21,6 +24,9 @@
     color: rgba($white, 0.1);
     margin-bottom: 30px;
     white-space: nowrap;
+    @include desktop{
+        margin-right: 60px;
+    }
 }
 
 .footer__title{
@@ -32,12 +38,18 @@
 }
 
 .footer__text{
+    display: block;
+    margin-top: 30px;
+    text-transform: initial;
     font-size: 14px;
     font-weight: 400;
     color: rgba($white, 0.15);
     line-height: 30px;
     @include tablets{
         font-size: 16px;
+    }
+    @include desktop{
+        min-width: 150px;
     }
 }
 
