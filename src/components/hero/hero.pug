@@ -1,9 +1,21 @@
 mixin hero()
     .hero
-        .hero__descr
-            p.hero__text Личный сайт
-                span веб разработчика
-            h1.hero__title Сергея Прокопени
+        .paralax
+            .paralax__item(data-speed='0.1')
+                +image('content/hero/img_par_1.png', 'paralax__img')
+            .paralax__item(data-speed='0.2')
+                +image('content/hero/img_par_2.png', 'paralax__img')
+            .paralax__item(data-speed='0.3')
+                +image('content/hero/img_par_3.png', 'paralax__img')
+            .paralax__item(data-speed='0.2')
+                +image('content/hero/img_par_4.png', 'paralax__img')
+            .paralax__item(data-speed='0.2')
+                +image('content/hero/first.png', 'paralax__img')
+            .paralax__item(data-speed='-0.3')
+                .hero__descr
+                    p.hero__text Личный сайт
+                        span веб разработчика
+                    h1.hero__title Сергея Прокопени
         .hero__scroll
             span Скролл
             +icon('scroll', 'hero__svg', 20, 30)
