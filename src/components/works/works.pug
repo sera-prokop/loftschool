@@ -15,9 +15,12 @@ mixin works()
                     +image('content/works/works_1.jpg', '')
                     +image('content/works/works_1.jpg', '')
                 .slider__previewer
-                    +image('content/works/previewer_1.png', '')
-                    +image('content/works/previewer_2.png', '')
-                    +image('content/works/previewer_3.png', '')
+                    button(type='button').slider__previewer-btn
+                        +image('content/works/previewer_1.png', '')
+                    button(type='button').slider__previewer-btn
+                        +image('content/works/previewer_2.png', '')
+                    button(type='button').slider__previewer-btn
+                        +image('content/works/previewer_3.png', '')
                 .slider__num 2
             .works__wrapper
                 ul.works__tags
