@@ -1,0 +1,53 @@
+.mobile-menu{
+    position: fixed;
+    overflow-y: auto;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    display: none;
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
+    color: $menu-color;
+
+    //overflow-y: auto;
+    .social{
+        margin-left: -20px;
+    }
+    .social__icon{
+        fill: $menu-color;
+    }
+    @include tablets{
+        display: none;
+    }
+}
+
+.mobile-menu__wrap{
+    height: 100vh;
+    width: 100%;
+    background-color: $white;
+    min-height: 620px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include phones{
+        width: 325px;
+        margin-left: auto;
+    }
+}
+
+.mobile-menu__list{
+    margin-bottom: 45px;
+}
+
+.mobile-menu__item{
+    //margin-bottom: 30px;
+}
+
+.mobile-menu__link{
+    padding: 15px 0;
+    display: flex;
+    text-decoration: none;
+    font-size: 18px;
+}

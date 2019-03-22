@@ -1,0 +1,67 @@
+// Burger style
+
+.burger{
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include tablets{
+        display: none;
+    }
+    &.open{
+        .burger__line,
+        .burger__line:after,
+        .burger__line:before{
+            background-color: $menu-color;
+            position: absolute;
+
+        }
+        .burger__line{
+            background-color: transparent;
+            &:before {
+                transform: rotateZ(-45deg) translateX(-6px) translateY(7px);
+            }
+            &:after {
+                transform: rotateZ(45deg) translateX(-6px) translateY(-7px);
+            }
+            //transform: translateX(-100%);
+        }
+
+        ~ .mobile-menu{
+            display: block;
+            @include tablets{
+                display: none;
+            }
+        }
+    }
+}
+
+.burger__line,
+.burger__line:after,
+.burger__line:before{
+    transition: $tr;
+    height: 4px;
+    width: 24px;
+    display: block;
+    background-color: $white;
+}
+
+
+.burger__line{
+    position: relative;
+
+    &:after{
+        content: '';
+        position: absolute;
+        top: 9px;
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        bottom: 9px;
+    }
+}//end burger style
+

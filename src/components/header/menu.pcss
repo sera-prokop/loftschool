@@ -1,0 +1,55 @@
+// Menu style
+
+.menu{
+    display: none;
+    @include tablets{
+        display: block;
+    }
+}
+
+.menu__list{
+    display: flex;
+}
+
+.menu__item{
+    display: flex;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.menu__link{
+    position: relative;
+    color: $white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color $tr;
+    padding: 45px 5px;
+    @include tablets{
+        font-size: 15px;
+    }
+    @include desktop{
+        padding: 45px 30px;
+        font-size: 16px;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: $orange;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity $tr;
+    }
+    &:hover{
+        color: $orange;
+        &:after{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+}//end menu style

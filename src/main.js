@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === "development") {
 
 import "./scripts/skills";
 
-import {headerScroll} from "./components/header/header";
+import "./components/header/header";
 import "./components/hero/hero";
 
-headerScroll();
+

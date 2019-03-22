@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .header__logo{
@@ -29,133 +30,9 @@
     }
 }
 
-// Menu style
-
-.menu{
-    display: none;
-    @include tablets{
-        display: block;
-    }
-}
-
-.menu__list{
-    display: flex;
-}
-
-.menu__item{
-    display: flex;
-    &:last-child{
-        margin-right: 0;
-    }
-}
-
-.menu__link{
-    position: relative;
-    color: $white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color $tr;
-    padding: 45px 5px;
-    @include tablets{
-        font-size: 15px;
-    }
-    @include desktop{
-        padding: 45px 30px;
-        font-size: 16px;
-    }
-    &:after{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3px;
-        width: 100%;
-        background-color: $orange;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity $tr;
-    }
-    &:hover{
-        color: $orange;
-        &:after{
-            visibility: visible;
-            opacity: 1;
-        }
-    }
-
-}//end menu style
-
-// Social icon style
-
-.social{
-    display: flex;
-    &--footer{
-        .social__link{
-            width: 50px;
-            height: 50px;
-            border: 1px solid rgba($white, 0.3);
-            border-radius: 50%;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-        }
-    }
-}
-
-.social__link{
-    padding: 20px;
-    &:last-child{
-        margin-right: 0;
-    }
-    &:hover{
-        .social__icon{
-            fill: $orange;
-        }
-    }
-}
-
-.social__icon{
-    fill: rgba(255, 255, 255, 0.3);
-    transition: fill $tr;
-    width: 25px;
-    height: 25px;
-}//end social icon style
-
-
-
-
-// Burger style
-
-.burger{
+.header__mobile-menu{
+    display: block;
     @include tablets{
         display: none;
     }
 }
-
-.burger__line,
-.burger__line:after,
-.burger__line:before{
-    height: 4px;
-    width: 24px;
-    display: block;
-    background-color: $white;
-}
-
-
-.burger__line{
-    position: relative;
-
-    &:after{
-        content: '';
-        position: absolute;
-        top: 9px;
-    }
-    &:before{
-        content: '';
-        position: absolute;
-        bottom: 9px;
-    }
-}//end burger style
-
