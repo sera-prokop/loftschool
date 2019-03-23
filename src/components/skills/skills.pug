@@ -3,14 +3,15 @@ mixin skills()
         .container.skills__container
             h3.skills__title Чем я могу быть полезен вам
             p.skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .skills__wrap
+            //-.skills__wrap
                 h4.skills__subtitle Front-end
                 ul.skills__list
                     +skillList(topSkillList)
-            .skills__wrap
+            //-.skills__wrap
                 h4.skills__subtitle Workflow
                 ul.skills__list
                     +skillList(bottomSkillList)
+            #skills-component
         +image('content/skills/keyboard.png', 'skills__img')
 
 mixin skillList(skillList)

@@ -1,0 +1,32 @@
+mixin skills-vue()
+    script(type="text/x-template")#skills-wrap
+        .skills__wrap
+            ul(v-for='skill in skills' :key="skill.skillsGroup")
+                h4.skills__subtitle {{skill.skillsGroup}}
+                li
+                    skillsList(:skill='skill')
+
+    script(type="text/x-template")#skills-list
+        ul.skills__list
+            li.skills__item(v-for='(skillPercent, skillName) in skill.skills')
+                skill(
+                    :skillPercent='skillPercent',
+                    :skillName='skillName'
+                )
+
+    script(type="text/x-template")#skill
+        .skills__svg-wrap
+            svg.skills__circular-chart.orange(viewBox='0 0 36 36' width='112' height='112' fill='transparent')
+                path.skills__circle-bg(d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
+                path.skills__circle(:stroke-dasharray="skillPercent + ' 100'", d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
+            span.skills__name {{skillName}}
+
+
+
+mixin skillList(skillList)
+    each item in skillList
+        li.skills__item
+            svg.skills__circular-chart.orange(viewBox='0 0 36 36' width='112' height='112' fill='transparent')
+                path.skills__circle-bg(d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
+                path.skills__circle(stroke-dasharray=`${item.skillPercent} 100`, d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
+            span.skills__name=item.skillName

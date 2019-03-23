@@ -7,5 +7,6 @@ import "./scripts/skills";
 
 import "./components/header/header";
 import "./components/hero/hero";
+import "./components/skills/skills";
 
 
