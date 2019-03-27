@@ -1,24 +1,26 @@
 mixin reviews()
     section.reviews.section
-        .container
-            .reviews__top
-                h2.reviews__title.section__title Что обо мне говорят
-                .reviews__btns.btns-reviews
-                    button.btns-reviews__prew.btns-reviews__icon
-                        span.visually-hidden Вперед
-                        +icon('short_arrow', 'btns-reviews__svg', '10px', '10px')
-                    button.btns-reviews__next.btns-reviews__icon
-                        span.visually-hidden Назад
-                        +icon('short_arrow', 'btns-reviews__svg', '10px', '10px')
-            .reviews__slider
-                +sliderReviews(sliderData)
+        script(type="text/x-template")#reviews
+            .container
+                .reviews__top
+                    h2.reviews__title.section__title Что обо мне говорят
+                    .reviews__btns.btns-reviews
+                        button(@click="previous()").btns-reviews__prew.btns-reviews__icon
+                            span.visually-hidden Вперед
+                            +icon('short_arrow', 'btns-reviews__svg', '10px', '10px')
+                        button(@click="next()").btns-reviews__next.btns-reviews__icon
+                            span.visually-hidden Назад
+                            +icon('short_arrow', 'btns-reviews__svg', '10px', '10px')
+                .reviews__slider
+                    +sliderReviews(sliderData)
+        #reviews_component
 
 
 
 mixin sliderReviews(list)
-    ul.slider-reviews
+    flickity(ref="flickity" :options="flickityOptions")
         each item, ind in list
-            li(class=`slider-reviews__item slider-reviews__item--${ind}`)
+            div(class='slider-reviews__item')
                 p.slider-reviews__text=item.text
                 .slider-reviews__author.author
                     .author__img
@@ -30,13 +32,37 @@ mixin sliderReviews(list)
 -
     var sliderData = [
     {
-        text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+        text: '1Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
         img: 'author_1.png',
         name: 'Ковальчук Дмитрий',
         about: 'Основатель Loftschool'
     },
     {
-        text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+        text: '2Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+        img: 'author_2.png',
+        name: 'Владимир Сабанцев',
+        about: 'Преподаватель'
+    },
+    {
+        text: '3Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+        img: 'author_1.png',
+        name: 'Ковальчук Дмитрий',
+        about: 'Основатель Loftschool'
+    },
+    {
+        text: '4Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+        img: 'author_2.png',
+        name: 'Владимир Сабанцев',
+        about: 'Преподаватель'
+    },
+    {
+        text: '5Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+        img: 'author_1.png',
+        name: 'Ковальчук Дмитрий',
+        about: 'Основатель Loftschool'
+    },
+    {
+        text: '6Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
         img: 'author_2.png',
         name: 'Владимир Сабанцев',
         about: 'Преподаватель'

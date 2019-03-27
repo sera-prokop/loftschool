@@ -1,19 +1,19 @@
 // Slider reviews style
 
-.slider-reviews{
-    display: flex;
-    @include tablets{
-        width: calc(100% - 55px);
-    }
-    @include desktop{
-        width: calc(100% - 85px);
-    }
-}
+//.slider-reviews{
+//    display: flex;
+//    @include tablets{
+//        width: calc(100% - 55px);
+//    }
+//    @include desktop{
+//        width: calc(100% - 85px);
+//    }
+//}
 
 .slider-reviews__item:not(:first-child){
-    display: none;
+    //display: none;
     @include tablets{
-        display: block;
+        //display: block;
         margin-left: 55px;
     }
     @include desktop{
@@ -23,7 +23,9 @@
 
 .slider-reviews__item{
     position: relative;
+    width: 100%;
     @include tablets{
+        width: 46%;
         padding-left: 40px;
         &:after{
             content: '';
