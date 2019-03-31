@@ -1,10 +1,10 @@
 <template lang="pug">
-    Header
+    .container
+        h1 sldfkjsdlfj
+
 </template>
 
 <script>
-  import Header from './components/Header/Header'
-
   export default {
     props: {},
     data() {
@@ -12,12 +12,11 @@
     },
     computed: {},
     methods: {},
-    components: {
-      Header
-    }
+    components: {}
   }
 </script>
 
-<style src="./app.pcss" lang="postcss">
+<style src="./header.pcss" lang="postcss" scoped>
 
 </style>
+

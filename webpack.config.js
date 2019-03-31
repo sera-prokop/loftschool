@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     test: /\.(p|post|)css$/,
     use: [
       isProductionBuild ? MiniCssExtractPlugin.loader : "vue-style-loader",
-      { loader: 'css-loader', options: { sourceMap: true } },
+      { loader: 'css-loader', options: { sourceMap: isProductionBuild ? false : true } },
       "postcss-loader"
     ]
   };
