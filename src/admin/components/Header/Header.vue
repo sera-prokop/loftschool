@@ -1,6 +1,16 @@
 <template lang="pug">
-    .container
-        h1 sldfkjsdlfj
+  header.header
+    .container.header__container
+      .header__left
+        .header__logo
+          img(src="../../images/user.jpg" alt="Foto")
+        .header__text
+          span Сергей Прокопеня
+          span Панель администрирования
+          a(href="#").header__link-mobile Выйти
+      a(href="#").header__right Выйти
+
+        
 
 </template>
 

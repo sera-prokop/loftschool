@@ -1,9 +1,14 @@
 <template lang="pug">
-    Header
+    .content
+      Header
+      Navigation
+      Works
 </template>
 
 <script>
-  import Header from './components/Header/Header'
+  import Header from './components/Header/Header';
+  import Navigation from './components/Navigation/Navigation';
+  import Works from './components/Works/Works';
 
   export default {
     props: {},
@@ -13,7 +18,9 @@
     computed: {},
     methods: {},
     components: {
-      Header
+      Header,
+      Navigation,
+      Works
     }
   }
 </script>
