@@ -1,0 +1,53 @@
+mixin works-vue()
+    script(type="text/x-template")#slider-wrapper
+        .works__container
+            .works__slider.slider
+                btns(:works="works" @slide="handleSlide")
+                display(:works="works" :currentWork="currentWork" :currentIndex="currentIndex")
+                thumbs(:works="works" :currentWork="currentWork" @thumbs="handleThumbs")
+            .works__wrapper
+                tags(:currentWork="currentWork" :tagsArray="tagsArray")
+                info(:currentWork="currentWork")
+
+    script(type="text/x-template")#slider-btns
+        .slider__arrow
+            button(
+                @click="$emit('slide', 'next')"
+            ).slider__arrow-next.slider__btn
+                +icon('short_arrow', 'slider__svg', '10px', '10px')
+                span.visually-hidden Вперед
+            button(
+                @click="$emit('slide', 'prev')"
+            ).slider__arrow-prew.slider__btn
+                +icon('short_arrow', 'slider__svg', '10px', '10px')
+                span.visually-hidden Назад
+
+
+    script(type="text/x-template")#slider-display
+        .slider__img(:data-curent="currentIndex + 1")
+            .slider__img-wrap
+                img(:src='currentWork.img')
+
+
+    script(type="text/x-template")#slider-thumbs
+        .slider__previewer
+            button(
+                type='button'
+                v-for='work, ind in works'
+                :class='{active: currentWork.id === work.id}'
+                @click="$emit('thumbs', ind )"
+            ).slider__previewer-btn
+                img(:src='work.img')
+
+    script(type="text/x-template")#slider-tags
+        ul.works__tags
+            li.works__tags-item(v-for="tag in tagsArray")
+                a(href="#").works__tags-link {{tag}}
+
+    script(type="text/x-template")#slider-info
+        .works__descr
+            .works__descr-item
+                h4 {{currentWork.title}}
+                p {{currentWork.text}}
+                a(:href="currentWork.link") {{currentWork.linkText}}
+

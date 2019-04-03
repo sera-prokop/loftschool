@@ -9,5 +9,7 @@ import "./components/header/header";
 import "./components/hero/hero";
 import "./components/skills/skills";
 import "./components/reviews/reviews";
+import "./components/works/works";
+import "./components/contact/contact";
 
 
