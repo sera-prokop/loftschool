@@ -21,16 +21,16 @@ function resetError(container) {
 
 function validate(form) {
   var elems = form.elements;
-  showError(elems.name.parentNode, ' Поле должно быть заполнено');
-  if (elems.name.value) {
-    resetError(elems.name.parentNode);
+  resetError(elems.name.parentNode);
+  if (!elems.name.value) {
+    showError(elems.name.parentNode, ' Поле должно быть заполнено');
     name = elems.name.value;
 
   }
 
-  showError(elems.email.parentNode, ' Поле должно быть заполнено');
-  if (elems.email.value) {
-    resetError(elems.email.parentNode);
+  resetError(elems.email.parentNode);
+  if (!elems.email.value) {
+    showError(elems.email.parentNode, ' Поле должно быть заполнено');
     mail = elems.email.value;
   }
 
