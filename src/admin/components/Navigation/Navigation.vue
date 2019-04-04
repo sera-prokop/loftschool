@@ -1,9 +1,12 @@
 <template lang="pug">
-  .container
-    nav.nav
-      ul.nav__list
-        li(v-for="item in list" :key="randomNumber()").nav__item
-          a(href="#").nav__link {{item}}
+    .container
+        nav.nav
+            ul.nav__list
+                li(v-for="item in list" :key="randomNumber()").nav__item
+                    //-a(href="#").nav__link {{item.text}}
+                    router-link(
+                        :to="item.link"
+                    ).nav__link {{item.text}}
 </template>
 
 <script>
@@ -11,7 +14,7 @@
     props: {},
     data() {
       return {
-        list: ['Обо мне', 'Работы', 'Отзывы']
+        list: [{text: 'Обо мне', link: '/admin/'}, {text: 'Работы', link: '/works'}, {text: 'Отзывы', link: '/reviews'}]
       }
     },
     computed: {},

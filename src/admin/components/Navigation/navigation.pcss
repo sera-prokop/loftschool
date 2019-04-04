@@ -1,12 +1,12 @@
-.nav{
+.nav {
 
 }
 
-.nav__list{
+.nav__list {
     display: flex;
 }
 
-.nav__link{
+.nav__link {
     position: relative;
     display: inline-block;
     color: #414c63;
@@ -16,18 +16,19 @@
     padding: 30px;
 }
 
-.nav__item--current{
-    .nav__link{
-        color: #383bcf;
-        font-weight: 600;
-        &:after{
-            content: '';
-            height: 3px;
-            width: 100%;
-            background-color: #383bcf;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-        }
+.router-link-active {
+
+    color: #383bcf;
+    font-weight: 600;
+
+    &:after {
+        content: '';
+        height: 3px;
+        width: 100%;
+        background-color: #383bcf;
+        position: absolute;
+        left: 0;
+        bottom: 0;
     }
+
 }
