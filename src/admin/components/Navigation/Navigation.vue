@@ -14,7 +14,11 @@
     props: {},
     data() {
       return {
-        list: [{text: 'Обо мне', link: '/admin/'}, {text: 'Работы', link: '/works'}, {text: 'Отзывы', link: '/reviews'}]
+        list: [
+          {text: 'Обо мне', link: '/'}, 
+          {text: 'Работы', link: '/works'}, 
+          {text: 'Отзывы', link: '/reviews'}
+        ]
       }
     },
     computed: {},

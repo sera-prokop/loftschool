@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
   import Title from '../Title/Title';
 
   export default {
@@ -51,7 +52,7 @@
       
     },
     components: {
-      Title
+      Title,
     }
   }
 </script>
