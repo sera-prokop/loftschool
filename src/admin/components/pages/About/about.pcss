@@ -1,0 +1,31 @@
+.about__title{
+    display: flex;
+    align-items: center;
+    button{
+        position: relative;
+        border: none;
+        background-color: transparent;
+        padding-left: 35px;
+        margin-left: 65px;
+        font-size: 16px;
+        color: #383bcf;
+        font-weight: 400;
+        &:after{
+            content: '+';
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 21px;
+            height: 21px;
+            background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+            color: #fff;
+            border-radius: 50%;
+            line-height: 1;
+            font-size: 17px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

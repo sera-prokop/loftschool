@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import $axios from "../../requests";
+import $axios from "../../../requests";
 
 export default {
   data() {
@@ -35,7 +35,7 @@ export default {
       
       $axios.defaults.headers['Authorization'] = `Bearer ${token}`;
 
-      this.$router.replace('/works');
+      this.$router.replace('/about');
     }
   }
 };

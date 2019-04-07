@@ -15,7 +15,7 @@
     data() {
       return {
         list: [
-          {text: 'Обо мне', link: '/'}, 
+          {text: 'Обо мне', link: '/about'}, 
           {text: 'Работы', link: '/works'}, 
           {text: 'Отзывы', link: '/reviews'}
         ]

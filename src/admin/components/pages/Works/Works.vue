@@ -16,7 +16,7 @@
 
 <script>
 
-  import Title from '../Title/Title';
+  import Title from '../../Title/Title';
 
   export default {
     props: {},
