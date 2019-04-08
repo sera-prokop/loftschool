@@ -1,6 +1,7 @@
 mixin skills-vue()
     script(type="text/x-template")#skills-wrap
         .skills__wrap
+            button(@click="test") test
             ul(v-for='skill in skills' :key="skill.skillsGroup")
                 h4.skills__subtitle {{skill.skillsGroup}}
                 li
@@ -23,7 +24,7 @@ mixin skills-vue()
 
 
 
-mixin skillList(skillList)
+//-mixin skillList(skillList)
     each item in skillList
         li.skills__item
             svg.skills__circular-chart.orange(viewBox='0 0 36 36' width='112' height='112' fill='transparent')

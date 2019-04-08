@@ -2,8 +2,8 @@
   section.about
     .container
       h2.about__title Блок «Обо мне»
-        button(@click="addGroup") Добавить группу
-      about-group(:condition="condition")
+        button(@click="addGroup" v-if="condition === false") Добавить группу
+      about-group(:condition="condition" @handleClose="addGroup")
 </template>
 
 <script>
@@ -12,7 +12,7 @@
   export default {
     data() {
       return {
-        condition: true
+        condition: false
       }
     },
     computed: {},

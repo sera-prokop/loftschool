@@ -3,12 +3,12 @@
         .container.login__container
             form(@submit.prevent="login").login__form.login-form
                 h2.login-form__title Авторизация
-                .login-form__field 
+                .login-form__field
                     input(type="text" placeholder="Введите имя" v-model="user.name")
                 h2.login-form__title Авторизация
-                .login-form__field 
+                .login-form__field
                     input(type="password" placeholder="Введите пароль" v-model="user.password")
-                .login-form__btn 
+                .login-form__btn
                     button(type="submit") Отправить
 
 
@@ -28,14 +28,18 @@ export default {
   },
   methods: {
     async login() {
-      const {
-        data: { token }
-      } = await $axios.post("/login", this.user);
-      localStorage.setItem("token", token);
-      
-      $axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+      try {
+        const {
+          data: { token }
+        } = await $axios.post("/login", this.user);
+        localStorage.setItem("token", token);
 
-      this.$router.replace('/about');
+        $axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+
+        this.$router.replace('/about');
+      } catch (error) {
+        alert('No registration')
+      }
     }
   }
 };
