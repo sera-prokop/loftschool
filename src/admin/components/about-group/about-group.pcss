@@ -1,11 +1,78 @@
 .about-group{
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -20px;
 }
 
 .about-group__item{
     width: calc(50% - 40px);
-    padding: 20px;
-    border: 1px solid #000;
-    margin: 20px;
+    padding: 30px;
+    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+    margin: 0 20px 40px;
+    background-color: #fff;
+    min-height: 390px;
+    h2{
+        margin: 0;
+    }
+    table{
+        width: 100%;
+    }
+}
+
+.about-group__top{
+    tr{
+        display: flex;
+        align-items: center;
+    }
+    td{
+        &:first-child{
+            flex: 1;
+        }
+    }
+    input, h2{
+        max-width: 270px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #000;
+        font-size: 18px;
+        color: #414c63;
+        font-weight: 400;
+    }
+    input{
+        min-height: 34px;
+    }
+    h2{
+        line-height: 34px;
+    }
+}
+
+.about-group__add,
+.about-group__hide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+
+    }
+}
+
+.about-group__add{
+    &:after{
+        background: svg-load('tick.svg', fill=#00d70a, width=100%, height=100%);
+    }
+}
+
+.about-group__hide{
+    &:after{
+        background: svg-load('cross.svg', fill=#bf2929, width=100%, height=100%);
+    }
 }

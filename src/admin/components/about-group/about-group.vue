@@ -1,14 +1,14 @@
 <template lang="pug">
     ul.about-group
         li.about-group__item(v-if="condition")
-            table.about-group__top
+            table.about-group__top.about-group__top--add
                 tr
                     td(colspan="2")
                         input(@keyup.enter="addTitle" type="text" placeholder="Название новой группы" v-model="aboutTitle")
                     td
-                        button(@click="addTitle") Add group
+                        button(@click="addTitle").about-group__add
                     td
-                        button(@click="handleClose") Hide
+                        button(@click="handleClose").about-group__hide
 
         li.about-group__item(v-for="category in categories" :key="category.id")
             table.about-group__top
@@ -16,9 +16,9 @@
                     td(colspan="2")
                         h2 {{ category.category }}
                     td
-                        button Add group
+                        button.about-group__add
                     td
-                        button(@click="removeCategory(category.id)") Remove group
+                        button(@click="removeCategory(category.id)").about-group__hide
                 skill-item(v-for="skill in filterSkills(category.id)" :key="skill.id" :skill="skill")
             add-skill(:category="category")
 
