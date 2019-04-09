@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import {mapActions} from "vuex";
 
 const skill = {
   template: '#skill',
@@ -15,49 +14,73 @@ const skillsList = {
     skill
   },
   props: {
-    skill: Object
+    skills: Array
+  },
+  methods: {
+
   }
 };
 
-import store from '../../admin/store';
+
+import axios from 'axios';
 
 
 new Vue({
   el: '#skills-component',
-  store,
   template: '#skills-wrap',
   components: {
     skillsList
   },
+
   data() {
     return {
-      skills: {}
+      skills: [],
+      categories: []
     }
   },
+
   methods: {
-    ...mapActions("skills", ["getSkillAction"]),
-    async test(){
-      try {
-
-        const response = await this.getSkillAction();
-        console.log('response');
-
-      } catch (error) {
-        console.log('test1')
-        console.log(error.message);
-
-      }
+    getCategories() {
+      const response = axios.get('/categories/116');
+      return response;
+    },
+    getSkills() {
+      const response = axios.get('/skills/116');
+      return response;
+    },
+    filterSkills(categoryId) {
+      return this.skills.filter(skill => skill.category === categoryId)
     }
   },
+
   async created() {
+
+    axios.defaults.baseURL = 'https://webdev-api.loftschool.com/';
     try {
 
-      const response = await this.getSkillAction();
-      console.log(response);
+      const response = await this.getCategories();
+      this.categories = response.data;
+      console.log(response.data);
 
     } catch (error) {
 
-      console.log(error.message);
+      throw new Error(
+        error.response.data.error || error.response.data.message
+      )
+
+    }
+
+    try {
+
+      const response = await this.getSkills();
+      this.skills = response.data;
+      console.log(response.data);
+
+    } catch (error) {
+
+      throw new Error(
+        error.response.data.error || error.response.data.message || error.request
+      );
 
     }
     // const data = require("../../data/skills.json");

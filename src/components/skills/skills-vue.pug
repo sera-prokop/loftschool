@@ -1,18 +1,17 @@
 mixin skills-vue()
     script(type="text/x-template")#skills-wrap
         .skills__wrap
-            button(@click="test") test
-            ul(v-for='skill in skills' :key="skill.skillsGroup")
-                h4.skills__subtitle {{skill.skillsGroup}}
+            ul(v-for='category in categories' :key="category.id")
+                h4.skills__subtitle {{category.category}}
                 li
-                    skillsList(:skill='skill')
+                    skillsList(:skills='filterSkills(category.id)' )
 
     script(type="text/x-template")#skills-list
         ul.skills__list
-            li.skills__item(v-for='(skillPercent, skillName) in skill.skills')
+            li.skills__item(v-for='skill in skills')
                 skill(
-                    :skillPercent='skillPercent',
-                    :skillName='skillName'
+                    :skillPercent='skill.percent',
+                    :skillName='skill.title'
                 )
 
     script(type="text/x-template")#skill
@@ -22,12 +21,4 @@ mixin skills-vue()
                 path.skills__circle(:stroke-dasharray="skillPercent + ' 100'", d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
             span.skills__name {{skillName}}
 
-
-
-//-mixin skillList(skillList)
-    each item in skillList
-        li.skills__item
-            svg.skills__circular-chart.orange(viewBox='0 0 36 36' width='112' height='112' fill='transparent')
-                path.skills__circle-bg(d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
-                path.skills__circle(stroke-dasharray=`${item.skillPercent} 100`, d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831')
-            span.skills__name=item.skillName
+            

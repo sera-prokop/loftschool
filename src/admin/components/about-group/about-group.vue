@@ -16,7 +16,7 @@
                     td(colspan="2")
                         h2 {{ category.category }}
                     td
-                        button.about-group__add
+                        button(@click="editCategory(category.id)").about-group__add
                     td
                         button(@click="removeCategory(category.id)").about-group__hide
                 skill-item(v-for="skill in filterSkills(category.id)" :key="skill.id" :skill="skill")
@@ -71,7 +71,9 @@
           alert(error.message)
 
         }
-
+      },
+      editCategory(){
+        console.log('test')
       }
     },
     computed: {
